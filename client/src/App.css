@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,11 +22,46 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.magical-input {
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  font-size: 0;
+  outline: none;
+  position: relative;
+  width: 200px;
+}
+
+.magical-input:before {
+  content: 'Choose file';
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  color: #444;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.magical-input:hover:before {
+  background-color: #b3b3b3;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.magical-input:focus:before {
+  background-color: #3399ff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.magical-input:active:before {
+  background-color: #1a75ff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.magical-input::-webkit-file-upload-button {
+  visibility: hidden;
 }
