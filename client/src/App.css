@@ -22,7 +22,24 @@
   color: #61dafb;
 }
 
-.magical-input {
+.image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-upload-container {
+  margin-right: 16px
+}
+
+.image-skeleton {
+  width: 242px;
+  height: 242px;
+  border-radius: 8px;
+  border: 8px dashed #414651;
+}
+
+.magical-file-input {
   border: none;
   color: transparent;
   cursor: pointer;
@@ -32,10 +49,10 @@
   width: 200px;
 }
 
-.magical-input:before {
+.magical-file-input:before {
   content: 'Choose file';
   background-color: #e0e0e0;
-  border-radius: 5px;
+  border-radius: 8px;
   color: #444;
   display: inline-block;
   font-size: 16px;
@@ -44,25 +61,25 @@
   width: 100%;
 }
 
-.magical-input:hover:before {
+.magical-file-input:hover:before {
   background-color: #b3b3b3;
   color: #fff;
   transition: all 0.2s ease-in-out;
 }
 
-.magical-input:focus:before {
+.magical-file-input:focus:before {
   background-color: #3399ff;
   color: #fff;
   transition: all 0.2s ease-in-out;
 }
 
-.magical-input:active:before {
+.magical-file-input:active:before {
   background-color: #1a75ff;
   color: #fff;
   transition: all 0.2s ease-in-out;
 }
 
-.magical-input::-webkit-file-upload-button {
+.magical-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
 
@@ -71,7 +88,6 @@
   display: inline-block;
   overflow: hidden;
   max-width: 250px;
-  margin-top: 48px;
   border-radius: 16px;
   cursor: pointer;
 }
@@ -123,3 +139,72 @@
     opacity: 0;
   }
 }
+
+.description-section {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-section > label {
+  font-size: 24px;
+}
+
+.magical-select {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px dashed #1ce2ff;
+  outline: none;
+  padding: 8px 30px 8px 10px;
+  animation: magical-select-border-bottom 3s ease-in-out infinite;
+  margin-left: 24px;
+}
+
+.magical-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid white;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.magical-select option {
+  color: black;
+  background-color: white;
+}
+
+.magical-select option:hover {
+  background-color: #8b00ff;
+  color: white;
+}
+
+@keyframes magical-select-border-bottom {
+  0% {
+    border-bottom: 3px dashed #1ce2ff;
+  }
+  25% {
+    border-bottom: 3px dashed #506dff;
+  }
+  50% {
+    border-bottom: 3px dashed #9f50ff;
+  }
+  75% {
+    border-bottom: 3px dashed #506dff;
+  }
+  100% {
+    border-bottom: 3px dashed #1ce2ff;
+  }
+}
+
